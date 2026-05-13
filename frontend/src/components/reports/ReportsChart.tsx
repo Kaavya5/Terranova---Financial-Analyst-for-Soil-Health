@@ -39,18 +39,14 @@ export function ReportsChart({ reports = [] }: ReportsChartProps) {
           tickLine={false}
         />
         <Tooltip
-          contentStyle={{
-            background: "#fff",
-            border: "1px solid #e5e7eb",
-            borderRadius: "12px",
-            fontSize: "12px",
-            fontWeight: 600,
-          }}
-          formatter={(value: number, name: string) => [
-            name === "profit" ? `₹${value.toLocaleString("en-IN")}` : `${value}%`,
-            name === "profit" ? "Profit" : "ROI",
-          ]}
-        />
+  contentStyle={{
+    background: "#fff",
+    border: "1px solid #e5e7eb",
+    borderRadius: "12px",
+    fontSize: "12px",
+    fontWeight: 600,
+  }}
+/>
         <Line
           type="monotone"
           dataKey="profit"
