@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: terranova-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false   # Set manually in Render dashboard
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ANTHROPIC_API_KEY
+        sync: false   # Set manually in Render dashboard
+      - key: ML_SERVICE_URL
+        sync: false   # Set to your ML service URL after deploying it
+      - key: CORS_ORIGINS
+        sync: false   # Set to your Vercel frontend URL
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "60"

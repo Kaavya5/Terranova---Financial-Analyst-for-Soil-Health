@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F7F9F8;
+  --foreground: #111827;
+  
+  --card-bg: #ffffff;
+  --border: #E5E7EB;
+  
+  /* Terra Nova Greens */
+  --primary: #1F4532;
+  --primary-light: #E8EFEB;
+  --primary-accent: #2B6046;
+  --primary-text: #173325;
+  
+  --success: #10B981;
+  --success-bg: #D1FAE5;
+  
+  --warning: #F59E0B;
+  --warning-bg: #FEF3C7;
+
+  --danger: #EF4444;
+  --danger-bg: #FEE2E2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-accent: var(--primary-accent);
+  --color-card: var(--card-bg);
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.1)] border border-gray-100;
+  }
+
+  .input-field {
+    @apply w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-primary-accent transition-colors shadow-sm;
+  }
+}
